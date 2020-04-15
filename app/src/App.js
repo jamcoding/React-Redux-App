@@ -1,5 +1,4 @@
 import React from 'react';
-// import logo from './logo.svg';
 import './App.css';
 
 import { createStore, applyMiddleware } from 'redux';
@@ -15,7 +14,7 @@ export default function App() {
   return (
     <Provider store={store}>
       <div className="App">
-        <h1>Players</h1>
+        <h1>NBA Players</h1>
         <BasketballPlayers />
       </div>
     </Provider>

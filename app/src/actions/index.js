@@ -12,7 +12,7 @@ export const fetchData = () => dispatch => {
         axios
             .get('https://www.balldontlie.io/api/v1/players')
             .then(response => {
-                console.log("response", response.data.data)
+                // console.log("response", response.data)
                 dispatch({ type: DATA_SUCCESS, payload: response.data.data })
             })
             .catch(error => {

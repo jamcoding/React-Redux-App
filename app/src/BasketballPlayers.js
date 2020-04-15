@@ -5,18 +5,24 @@ import { fetchData } from './actions';
 
 const BasketballPlayers = props => {
     return (
-        <div>
+        <div className="players">
             {props.loading ? (
-                <div>data loading</div>
+                <div className="loading">loading players...</div>
             ) : (
-                <div>
-                    <button onClick={() => props.fetchData()}>get data</button>
-                    {props.player.map(players => {
-                        return (
-                        <p key={players.id}>{players.first_name}</p>
-                        )
-                    })}
-                </div>
+                <>
+                <button className="loading-players-button" onClick={() => props.fetchData()}>Get Players</button>
+                    <div className="players-list">
+                        {props.player.map(players => {
+                            return (
+                                <div className="player-card" key={players.id}>
+                                    <p className="player-name">{players.first_name} {players.last_name} <span className="position">{players.position}</span></p>
+                                    <p>Conference: {players.team.conference}</p>
+                                    <p>Division: {players.team.division}</p>
+                                </div>
+                            )
+                        })}
+                    </div>
+                </>
             )}
         </div>
     )
